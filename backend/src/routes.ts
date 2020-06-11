@@ -1,9 +1,12 @@
 import express from 'express';
+import connection from './database/connection';
+import CardsController from './controllers/CardsController';
 
 const routes = express.Router();
 
-routes.get('/', (request, response) => {
-  return response.send('Hello World, ICB');
-});
+const cardsController = new CardsController();
+
+routes.get('/cards/:id', cardsController.show);
+routes.post('/cards', cardsController.store);
 
 export default routes;
