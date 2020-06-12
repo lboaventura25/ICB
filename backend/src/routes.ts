@@ -1,21 +1,25 @@
 import express from 'express';
-import connection from './database/connection';
 import CardsController from './controllers/CardsController';
 import MonthsController from './controllers/MonthsController';
+import TrackController from './controllers/TrackController';
 
 const routes = express.Router();
 
 const cardsController = new CardsController();
 const monthsController = new MonthsController();
+const trackController = new TrackController();
 
 routes.get('/', (request, response) => {
-  return response.send('Momozinho, eu te amo!');
+  return response.send('Ben-vindo ao backend!');
 });
 
 routes.get('/months', monthsController.index);
-routes.get('/months/:id', monthsController.show);
+routes.get('/month/:id', monthsController.show);
 
-routes.get('/cards/:id', cardsController.show);
-routes.post('/cards', cardsController.create);
+routes.get('/card/:id', cardsController.show);
+routes.post('/card/new', cardsController.create);
+
+routes.post('/track/new', trackController.create);
+routes.get('/track/:id_month', trackController.index);
 
 export default routes;
