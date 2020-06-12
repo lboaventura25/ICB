@@ -16,8 +16,6 @@ class MonthsController {
       .select('month')
       .first();
 
-    console.log(month);
-
     return response.json(month);
   }
 }
