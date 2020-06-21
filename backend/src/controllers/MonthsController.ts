@@ -1,23 +1,23 @@
-import { Response, Request } from "express";
-import connection from "../database/connection";
+import { Response, Request } from 'express'
+import connection from '@database/connection'
 
 class MonthsController {
-  async index(request: Request, response: Response) {
-    const months = await connection('months').select('month');
+  async index (request: Request, response: Response) {
+    const months = await connection('months').select('month')
 
-    return response.json(months);
+    return response.json(months)
   }
 
-  async show(request: Request, response: Response) {
-    const id = request.params.id;
+  async show (request: Request, response: Response) {
+    const id = request.params.id
 
     const month = await connection('months')
       .where('id', id)
       .select('month')
-      .first();
+      .first()
 
-    return response.json(month);
+    return response.json(month)
   }
 }
 
-export default MonthsController;
+export default MonthsController

@@ -1,21 +1,21 @@
-import Knex from "knex";
+import Knex from 'knex'
 
-export async function up(knex: Knex) {
+export async function up (knex: Knex) {
   return knex.schema.createTable('tracks', table => {
-    table.increments('id').primary();
+    table.increments('id').primary()
 
     table.integer('id_month')
       .notNullable()
       .references('id')
-      .inTable('months');
+      .inTable('months')
 
     table.integer('id_card')
       .notNullable()
       .references('id')
-      .inTable('cards');
-  });
+      .inTable('cards')
+  })
 }
 
-export async function down(knex: Knex) {
-  return knex.schema.dropTable('tracks');
+export async function down (knex: Knex) {
+  return knex.schema.dropTable('tracks')
 }

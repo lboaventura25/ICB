@@ -1,18 +1,18 @@
-import { Request, Response } from "express";
-import connection from "../database/connection";
+import { Request, Response } from 'express'
+import connection from '@database/connection'
 
 class CardsController {
-  async show(request: Request, response: Response) {
-    const id = request.params.id;
+  async show (request: Request, response: Response) {
+    const idCard = request.params.id
 
-    const card = await connection('cards').where('id', id).first();
+    const card = await connection('cards').where('id', idCard).first()
 
-    return response.json({ card });
+    return response.json({ card })
   }
 
-  async create(request: Request, response: Response) {
-    return null;
+  async create (request: Request, response: Response) {
+    return null
   }
 }
 
-export default CardsController;
+export default CardsController
