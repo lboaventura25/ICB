@@ -1,0 +1,68 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, input, button {
+  font: 400 18px Roboto, Arial, Helvetica, sans-serif;
+}
+
+body {
+  font: 400 16px Roboto, sans-serif;
+  background-color: black;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: black;
+  font-family: Ubuntu;
+}
+
+button {
+  cursor: pointer;
+}
+
+.button {
+  width: 50%;
+  height: 60px;
+  background: green;
+  border: 0;
+  border-radius: 15px;
+  color: #FFF;
+  font-weight: 700;
+  margin-top: 20px;
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
+  font-size: 18px;
+  line-height: 60px;
+  transition: filter 0.2s;
+}
+
+.button:hover {
+  filter: brightness(85%);
+}
+.button svg {
+  margin-right: 8px;
+}
+
+form input {
+  width: 100%;
+  height: 60px;
+  color: #333;
+  border: 1px solid #dcdce6;
+  border-radius: 8px;
+  padding: 0 24px;
+}
+
+form textarea {
+  width: 100%;
+  resize: vertical;
+  min-height: 140px;
+  color: #333;
+  border: 1px solid #dcdce6;
+  border-radius: 8px;
+  padding: 16px 24px;
+  line-height: 24px;
+}
